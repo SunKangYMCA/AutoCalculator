@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrencyView: View {
-
+    
     @StateObject var viewModel: CurrencyViewModel = CurrencyViewModel()
     @FocusState private var inputIsFocused: Bool
     
@@ -26,47 +26,51 @@ struct CurrencyView: View {
                     Text(currency)
                 }
             }
-            
-            VStack {
-                Rectangle()
-                    .frame(height: 8)
-                    .foregroundColor(.blue)
-                    .opacity(0.9)
-
-                TextField("Enter an amount", text: $viewModel.input)
-                    .padding()
-                    .background(
-                        Color.gray
-                            .opacity(0.1)
-                            .cornerRadius(.cornerRadius)
-                    )
-                    .padding()
-                    .keyboardType(.decimalPad)
-                    .focused($inputIsFocused)
-                
-                TextField("Enter a currency", text: $viewModel.base)
-                    .padding()
-                    .background(
-                        Color.gray
-                            .opacity(0.1)
-                            .cornerRadius(.cornerRadius)
-                    )
-                    .padding()
-                    .focused($inputIsFocused)
-                
-                Button {
-                    viewModel.makeRequest(showAll: false, currencies: ["USD", "CAD", "KRW", "JPY", "CNY", "AUD"])
-                    inputIsFocused = false
-                } label: {
-                    Text("Converter")
-                }
-                .padding()
-
-            }
+            infoTextField
+            converterButton
         }
         .onAppear {
             viewModel.makeRequest(showAll: true)
         }
+    }
+    
+    private var infoTextField: some View {
+        VStack {
+            Rectangle()
+                .frame(height: 8)
+                .foregroundColor(.blue)
+                .opacity(0.9)
+            
+            TextField("Enter an amount", text: $viewModel.input)
+                .padding()
+                .background(
+                    Color.gray
+                        .opacity(0.1)
+                        .cornerRadius(.cornerRadius)
+                )
+                .padding()
+                .keyboardType(.decimalPad)
+                .focused($inputIsFocused)
+            
+            TextField("Enter a currency", text: $viewModel.base)
+                .padding()
+                .background(
+                    Color.gray
+                        .opacity(0.1)
+                        .cornerRadius(.cornerRadius)
+                )
+                .padding()
+                .focused($inputIsFocused)
+        }
+    }
+    private var converterButton: some View {
+        Button {
+            viewModel.makeRequest(showAll: false)
+            inputIsFocused = false
+        } label: {
+            Text("Converter")
+        }
+        .padding()
     }
 }
 

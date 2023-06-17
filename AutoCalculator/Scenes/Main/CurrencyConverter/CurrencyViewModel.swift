@@ -15,7 +15,7 @@ class CurrencyViewModel: ObservableObject {
     
     private var networkManager = NetworkManager()
 
-    func makeRequest(showAll: Bool, currencies: [String] = ["USD", "GBP", "EUR"]) {
+    func makeRequest(showAll: Bool, currencies: [String] = ["USD", "CAD", "KRW", "JPY", "CNY", "AUD"]) {
         networkManager.apiRequest(url: "https://api.exchangerate.host/latest?base=\(base)&amount=\(input)") { currency in
             var tempList = [String]()
             let date = currency.date
