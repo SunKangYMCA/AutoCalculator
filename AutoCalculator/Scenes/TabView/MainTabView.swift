@@ -9,7 +9,35 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            NavigationView {
+                CurrencyView()
+            }
+            .tabItem {
+                Label("Currency", systemImage: "dollarsign.arrow.circlepath")
+            }
+            
+            NavigationView {
+                GestureView()
+            }
+            .tabItem {
+                Label("Gesture", systemImage: "hand.tap")
+            }
+            
+            NavigationView {
+                HistoryView()
+            }
+            .tabItem {
+                Label("History", systemImage: "clock")
+            }
+            
+            NavigationView {
+                CalcView()
+            }
+            .tabItem {
+                Label("Calc", systemImage: "calendar")
+            }
+        }
     }
 }
 

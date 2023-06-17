@@ -35,7 +35,11 @@ struct SplashView: View {
                             .opacity(0.9)
                             .cornerRadius(.cornerRadius)
                     )
-                    .padding(.top, 100)
+                    .padding(.top, 50)
+                Text("Currency Converter")
+                    .font(.skFont(type: .normalBold))
+                    .foregroundColor(.white)
+                
                     Spacer()
             }
         }
