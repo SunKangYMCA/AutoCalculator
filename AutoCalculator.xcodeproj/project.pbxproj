@@ -18,6 +18,14 @@
 		04CD3E842A3CB4340009D077 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3E832A3CB4340009D077 /* Font.swift */; };
 		04CD3E862A3CB83F0009D077 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3E852A3CB83F0009D077 /* CGFloat.swift */; };
 		04CD3E892A3CC1BE0009D077 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3E882A3CC1BE0009D077 /* MainTabView.swift */; };
+		04CD3E8B2A3CC7110009D077 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3E8A2A3CC7110009D077 /* CurrencyView.swift */; };
+		04CD3E8D2A3CC7200009D077 /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3E8C2A3CC7200009D077 /* GestureView.swift */; };
+		04CD3E912A3CC7CA0009D077 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3E902A3CC7CA0009D077 /* HistoryView.swift */; };
+		04CD3E932A3CC8A30009D077 /* CalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3E922A3CC8A30009D077 /* CalcView.swift */; };
+		04CD3E9D2A3CEBAB0009D077 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04CD3E9C2A3CEBAB0009D077 /* Alamofire */; };
+		04CD3EA12A3CF9A50009D077 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3EA02A3CF9A50009D077 /* Currency.swift */; };
+		04CD3EA32A3D4F610009D077 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3EA22A3D4F610009D077 /* CurrencyViewModel.swift */; };
+		04CD3EA62A3D4FC80009D077 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3EA52A3D4FC80009D077 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +60,13 @@
 		04CD3E832A3CB4340009D077 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		04CD3E852A3CB83F0009D077 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		04CD3E882A3CC1BE0009D077 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		04CD3E8A2A3CC7110009D077 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
+		04CD3E8C2A3CC7200009D077 /* GestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
+		04CD3E902A3CC7CA0009D077 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		04CD3E922A3CC8A30009D077 /* CalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcView.swift; sourceTree = "<group>"; };
+		04CD3EA02A3CF9A50009D077 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		04CD3EA22A3D4F610009D077 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
+		04CD3EA52A3D4FC80009D077 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CD3E9D2A3CEBAB0009D077 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +118,10 @@
 		04CD3E502A3CAA030009D077 /* AutoCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				04CD3EA42A3D4FA50009D077 /* Managers */,
 				04CD3E812A3CB4160009D077 /* Units */,
 				04CD3E7B2A3CAAFB0009D077 /* Scenes */,
+				04CD3E9E2A3CF9790009D077 /* Model */,
 				04CD3E512A3CAA030009D077 /* AutoCalculatorApp.swift */,
 				04CD3E552A3CAA050009D077 /* Assets.xcassets */,
 				04CD3E572A3CAA050009D077 /* Preview Content */,
@@ -139,8 +157,9 @@
 		04CD3E7B2A3CAAFB0009D077 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				04CD3E872A3CC18F0009D077 /* TabView */,
 				04CD3E7C2A3CAB2B0009D077 /* Splash */,
+				04CD3E872A3CC18F0009D077 /* TabView */,
+				04CD3E982A3CCA510009D077 /* Main */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -179,6 +198,74 @@
 			path = TabView;
 			sourceTree = "<group>";
 		};
+		04CD3E942A3CC9DF0009D077 /* CurrencyConverter */ = {
+			isa = PBXGroup;
+			children = (
+				04CD3E8A2A3CC7110009D077 /* CurrencyView.swift */,
+				04CD3EA22A3D4F610009D077 /* CurrencyViewModel.swift */,
+			);
+			path = CurrencyConverter;
+			sourceTree = "<group>";
+		};
+		04CD3E952A3CC9E70009D077 /* Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				04CD3E8C2A3CC7200009D077 /* GestureView.swift */,
+			);
+			path = Gesture;
+			sourceTree = "<group>";
+		};
+		04CD3E962A3CC9EF0009D077 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				04CD3E902A3CC7CA0009D077 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		04CD3E972A3CC9FE0009D077 /* Calc */ = {
+			isa = PBXGroup;
+			children = (
+				04CD3E922A3CC8A30009D077 /* CalcView.swift */,
+			);
+			path = Calc;
+			sourceTree = "<group>";
+		};
+		04CD3E982A3CCA510009D077 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				04CD3E942A3CC9DF0009D077 /* CurrencyConverter */,
+				04CD3E952A3CC9E70009D077 /* Gesture */,
+				04CD3E962A3CC9EF0009D077 /* History */,
+				04CD3E972A3CC9FE0009D077 /* Calc */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		04CD3E9E2A3CF9790009D077 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04CD3E9F2A3CF9870009D077 /* CustomObject */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04CD3E9F2A3CF9870009D077 /* CustomObject */ = {
+			isa = PBXGroup;
+			children = (
+				04CD3EA02A3CF9A50009D077 /* Currency.swift */,
+			);
+			path = CustomObject;
+			sourceTree = "<group>";
+		};
+		04CD3EA42A3D4FA50009D077 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				04CD3EA52A3D4FC80009D077 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,6 +282,9 @@
 			dependencies = (
 			);
 			name = AutoCalculator;
+			packageProductDependencies = (
+				04CD3E9C2A3CEBAB0009D077 /* Alamofire */,
+			);
 			productName = AutoCalculator;
 			productReference = 04CD3E4E2A3CAA030009D077 /* AutoCalculator.app */;
 			productType = "com.apple.product-type.application";
@@ -267,6 +357,9 @@
 				Base,
 			);
 			mainGroup = 04CD3E452A3CAA030009D077;
+			packageReferences = (
+				04CD3E9B2A3CEBAB0009D077 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 04CD3E4F2A3CAA030009D077 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -310,11 +403,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CD3E862A3CB83F0009D077 /* CGFloat.swift in Sources */,
+				04CD3EA32A3D4F610009D077 /* CurrencyViewModel.swift in Sources */,
 				04CD3E522A3CAA030009D077 /* AutoCalculatorApp.swift in Sources */,
+				04CD3EA62A3D4FC80009D077 /* NetworkManager.swift in Sources */,
 				04CD3E842A3CB4340009D077 /* Font.swift in Sources */,
+				04CD3E932A3CC8A30009D077 /* CalcView.swift in Sources */,
 				04CD3E892A3CC1BE0009D077 /* MainTabView.swift in Sources */,
 				04CD3E7E2A3CAB620009D077 /* SplashView.swift in Sources */,
+				04CD3EA12A3CF9A50009D077 /* Currency.swift in Sources */,
 				04CD3E802A3CAB720009D077 /* SplashViewModel.swift in Sources */,
+				04CD3E8D2A3CC7200009D077 /* GestureView.swift in Sources */,
+				04CD3E912A3CC7CA0009D077 /* HistoryView.swift in Sources */,
+				04CD3E8B2A3CC7110009D077 /* CurrencyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +739,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04CD3E9B2A3CEBAB0009D077 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04CD3E9C2A3CEBAB0009D077 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04CD3E9B2A3CEBAB0009D077 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04CD3E462A3CAA030009D077 /* Project object */;
 }

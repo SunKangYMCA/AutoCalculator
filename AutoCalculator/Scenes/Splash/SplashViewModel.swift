@@ -16,10 +16,14 @@ class SplashViewModel: ObservableObject {
     }
     
     func showTabView() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation {
                 self.shouldShowMainTabView.toggle()
             }
         }
     }
+}
+
+func annn() {
+    
 }
